@@ -1,3 +1,4 @@
 *.txt
 node_modules/
 lab1/
+.vscode/
