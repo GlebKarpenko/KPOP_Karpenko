@@ -1,5 +1,5 @@
 "use strict";
-// Коментарями позначено підномер завдання
+// Коментарями позначено номер завдання
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.checkoutWorkers = exports.createCustomer = exports.createCustomerID = exports.getWorkerInfoByID = exports.logWorkersNames = exports.getWorkersNamesByCategory = exports.allWorkers = exports.logFirstAvailable = exports.getAllworkers = exports.Category = void 0;
 // 1.2.1
