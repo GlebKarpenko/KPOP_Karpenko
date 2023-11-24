@@ -1,0 +1,12 @@
+#child-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  color: darkslategrey;
+
+  label {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+}

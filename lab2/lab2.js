@@ -134,4 +134,5 @@ console.log('2.6.2/');
 var refBook = new Encyclopedia('title2', 1998, 3);
 refBook.printItem();
 // 2.7.3
+console.log('2.7.3/');
 refBook.printCitation();

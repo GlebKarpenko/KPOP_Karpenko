@@ -1,0 +1,13 @@
+<div id="parent-container">
+  <label for="array-input">Enter array of numbers:</label>
+  <input id="array-input" type="text" [(ngModel)]="inputText"/>
+  <button (click)="readArray()">Calculate the difference</button>
+
+  <div *ngIf="inputIsValid(); else errorTemplate">
+    <app-child [inputArray]="numbers"></app-child>
+  </div>
+
+  <ng-template #errorTemplate>
+    <p>{{ errorMessage }}</p>
+  </ng-template>
+</div>

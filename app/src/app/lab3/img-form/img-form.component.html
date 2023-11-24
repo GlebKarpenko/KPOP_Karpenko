@@ -1,0 +1,8 @@
+<div id="url-input">
+  <label for="imageUrl">Image URL:</label>
+  <input id="imageUrl" type="text" [(ngModel)] ="imgUrl" (input)="loadImg()"/>
+  <button (click)="openImg()">Open Image</button>
+</div>
+<div id="img-output" *ngIf="isValidUrl">
+  <img [src]="imgUrl" alt="user's image" *ngIf="imgUrl" />
+</div>
