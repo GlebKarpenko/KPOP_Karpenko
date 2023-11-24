@@ -12,7 +12,7 @@ export class ImgFormComponent {
   isValidUrl: boolean = false;
 
   loadImg(): void{
-    const imgUrlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*\.(jpeg|jpg|png|gif|svg)$/i;
+    const imgUrlPattern = /\.(jpg|jpeg|png|webp|avif|gif|svg)$/;
 
     (imgUrlPattern.test(this.imgUrl))? this.isValidUrl = true : this.isValidUrl = false;
 
