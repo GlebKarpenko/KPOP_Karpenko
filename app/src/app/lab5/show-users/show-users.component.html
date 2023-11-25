@@ -1,0 +1,40 @@
+<div class="table-container">
+  <table id="users">
+    <thead>
+      <tr>
+        <th class="empty"></th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Username</th>
+        <th>Hashed</th>
+        <th>Phone</th>
+        <th>
+          <label>
+            <input type="checkbox" (click)="togglecheckAll()" />
+          </label>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of filteredUsers">
+        <button (click)="showPopup(user)">
+          <i class="material-icons">open_in_new</i>
+        </button>
+        <td>{{ user.name.first }} {{ user.name.last }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.login.username }}</td>
+        <td (click)="showHash(user.login.sha256)">sha256</td>
+        <td>{{ user.phone }}</td>
+        <td>
+          <label>
+            <input type="checkbox" (change)="handleSelection($event, user)"  [checked]="allChecked"/>
+          </label>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="popupVisible" id="pop-up">
+  <pre>{{ popupData | json }}</pre>
+</div>
+<app-show-selected [checkedUsers]="getSelectedUsers()" *ngIf="selectionDisplayStatus"></app-show-selected>

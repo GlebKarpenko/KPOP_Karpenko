@@ -1,0 +1,30 @@
+<h2>Selected Users</h2>
+<div class="table-container">
+  <table id="users">
+    <thead>
+      <tr>
+        <th class="empty"></th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Username</th>
+        <th>Hashed</th>
+        <th>Phone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of checkedUsers">
+        <button (click)="showPopup(user)">
+          <i class="material-icons">open_in_new</i>
+        </button>
+        <td>{{ user.name.first }} {{ user.name.last }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.login.username }}</td>
+        <td (click)="showHash(user.login.sha256)">sha256</td>
+        <td>{{ user.phone }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="popupVisible" id="pop-up">
+  <pre>{{ popupData | json }}</pre>
+</div>
