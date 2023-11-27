@@ -39,7 +39,6 @@ export class AppComponent {
   @ViewChild('container', {read: ViewContainerRef}) container!: ViewContainerRef;
 
   loadComponent(option: string){
-    console.log('option: ', option);
     if (option == 'lab3'){
       this.container.clear();
       const lab3Component = this.container.createComponent(ImgFormComponent);
